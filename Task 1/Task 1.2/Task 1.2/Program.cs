@@ -46,11 +46,6 @@ namespace Task_1._2
                             Task_1_2_3_second();
                         }
                         break;
-                    case TaskNumber.Task5:
-                        {
-                            //Task_1_1_4();
-                        }
-                        break;
                     default:
                         break;
                 }
