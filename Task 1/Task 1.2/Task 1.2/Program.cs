@@ -43,7 +43,7 @@ namespace Task_1._2
                         break;
                     case TaskNumber.Task4:
                         {
-                            Task_1_2_3_second();
+                            Task_1_2_4();
                         }
                         break;
                     default:
@@ -75,7 +75,6 @@ namespace Task_1._2
                     count++;
                 }
             }
-
             double res = sum / count;
             Console.WriteLine("Average length of stirng: {0}", res);
         }
@@ -85,18 +84,14 @@ namespace Task_1._2
             string str1 = Console.ReadLine();
             Console.Write("Enter second string: ");
             string str2 = Console.ReadLine();
-
-            char[] mass1 = str1.ToCharArray();
-            char[] mass2 = str2.ToCharArray();
-            for (int i = 0; i < mass1.Length; i++)
+            for (int i = 0; i < str1.Length; i++)
             {
-                Console.Write(mass1[i]);
-                for (int j = 0; j < mass2.Length; j++)
+                Console.Write(str1[i]);
+                for (int j = 0; j < str2.Length; j++)
                 {
-                    if (mass1[i] == mass2[j])
+                    if (str2.Contains(str1[i]))
                     {
-                        Console.Write(mass1[i]);
-                        
+                        Console.Write(str1[i]);                    
                         break;
                     }
                 }
@@ -124,7 +119,7 @@ namespace Task_1._2
                     if (!char.IsPunctuation(word[i]))
                     {
                         isWord = true;
-
+                        break;
                     }
                 }
                 if (isWord)
@@ -134,9 +129,31 @@ namespace Task_1._2
             }
             Console.WriteLine(count);
         }
-        static void Task_1_2_3_second()
+        static void Task_1_2_4()
         {
-            
+            string separators = ".!?";
+            bool isUpper = true;
+            Console.Write("Enter the string: ");
+            string str = Console.ReadLine();
+            StringBuilder result = new StringBuilder();
+            for (int i = 0; i < str.Length; i++)
+            {
+                char appendedChar = str[i];
+                if (isUpper)
+                {
+                    if (char.IsLetter(str[i]))
+                    {
+                        appendedChar = char.ToUpper(appendedChar);
+                        isUpper = false;
+                    }
+                }
+                else if (separators.Contains(str[i]))
+                {
+                    isUpper = true;
+                }
+                result.Append(appendedChar);
+            }
+            Console.WriteLine(result);
         }
     }
 }
