@@ -8,9 +8,6 @@ namespace Task_2_1_2
 {
     public abstract class Shape
     {
-
-        public abstract double GetPerimeter { get;}
-        public abstract double GetArea { get;}
-
+        public abstract string GetName();
     }
 }

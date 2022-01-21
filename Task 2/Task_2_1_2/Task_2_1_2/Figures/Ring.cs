@@ -16,9 +16,8 @@ namespace Task_2_1_2
             _innerradius = innerradius;
             this._radius = radius;
         }
-
-        public int MyProperty { get; set; }
-        public double GetInnerPerimeter{ get { return 2 * Math.PI * _innerradius; }}
+        public double GetInnerLineLength{ get { return 2 * Math.PI * _innerradius; }}
         public double GetRingArea { get { return Math.PI * (_radius * _radius - _innerradius * _innerradius); } }
+        public override string GetName() => "Кольцо";
     }
 }

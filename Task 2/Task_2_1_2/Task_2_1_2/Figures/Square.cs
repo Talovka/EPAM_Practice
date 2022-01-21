@@ -6,9 +6,16 @@ using System.Threading.Tasks;
 
 namespace Task_2_1_2
 {
-    class Square
+    class Square: Rectangle
     {
+        private Point _first;
+        private double _side;
 
-
+        public Square(Point first, double side): base(first,side,side)
+        {
+            _first = first;
+            _side = side;
+        }
+        public override string GetName() => "Квадрат";
     }
 }

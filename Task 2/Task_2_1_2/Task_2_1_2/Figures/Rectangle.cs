@@ -6,21 +6,20 @@ using System.Threading.Tasks;
 
 namespace Task_2_1_2
 {
-    class Rectangle: Shape
+    class Rectangle: Shape, IAreaCalculation, IPerimeterCalculation
     {
         private Point _first;
-        private Point _second;
-        private Point _third;
-        private Point _fourth;
-        public override double GetPerimeter { get; }
-        public override double GetArea { get; }
-        
-        public Rectangle(Point first, Point second, Point third, Point fourth)
+        private double _weight;
+        private double _height;
+        public  double GetPerimeter { get { return _height * 2 + _weight * 2; } }
+        public  double GetArea { get { return _height * _weight; } }
+
+        public Rectangle(Point first, double height, double weight)
         {
             _first = first;
-            _second = second;
-            _third = third;
-            _fourth = fourth;
+            _weight = weight;
+            _height = height;        
         }
+        public override string GetName() => "Прямоугольник";
     }
 }
