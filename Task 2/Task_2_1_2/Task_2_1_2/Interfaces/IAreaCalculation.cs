@@ -8,5 +8,6 @@ namespace Task_2_1_2
 {
     interface IAreaCalculation
     {
+        public double GetArea { get;}
     }
 }
