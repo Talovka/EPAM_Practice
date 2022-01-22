@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace Task_2_1_2
 {
@@ -19,13 +21,16 @@ namespace Task_2_1_2
             Console.WriteLine(one.GetLineLength);
             Console.WriteLine(one.GetArea);
             Console.WriteLine(one.X);
+            Console.WriteLine();
             Ring two = new Ring(first,3.5,2);
-            Console.WriteLine(two.GetInnerLineLength);
-            Console.WriteLine(two.GetRingArea);
+            Console.WriteLine(two.GetLineLength);
+            Console.WriteLine(two.GetArea);
             Console.WriteLine(two.X);
+            Console.WriteLine();
             Square test2 = new Square(second, 5);
             Console.WriteLine(test2.GetPerimeter);
             Console.WriteLine(test2.GetArea);
+            Console.WriteLine();
             Line test3 = new Line(third, fourth);
             Console.WriteLine(test3.GetLineLength);
             Console.WriteLine();
@@ -36,8 +41,12 @@ namespace Task_2_1_2
             Console.WriteLine();
             Console.WriteLine(test4.GetPerimeter);
             Console.WriteLine(test4.GetArea);
-            
-
+            List <Shape> list = new List<Shape>();
+            list.Add(test4);
+            foreach (var item in list)
+            {
+                Console.WriteLine(item.GetName()); 
+            }
         }
     }
 }

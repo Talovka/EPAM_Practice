@@ -13,7 +13,7 @@ namespace Task_2_1_2
         
         public double X { get { return _center.X; } }
         public double Y { get { return _center.Y; } }
-        public double GetLineLength { get { return 2 * Math.PI * _radius; } }
+        public virtual double GetLineLength { get { return 2 * Math.PI * _radius; } }
 
         public Round (Point center, double radius)
             {
