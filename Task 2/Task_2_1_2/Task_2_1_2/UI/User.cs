@@ -15,6 +15,8 @@ namespace Task_2_1_2
             Name = name;
             _shape = new List<Shape>();
         }
+
+        public List<Shape> ListofShape { get=> _shape; set=> _shape = value; }
         public void AddShape(Shape shape) 
         {
             _shape.Add(shape);

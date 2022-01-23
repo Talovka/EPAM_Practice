@@ -9,17 +9,19 @@ namespace Task_2_1_2
     class Rectangle: Shape, IAreaCalculation, IPerimeterCalculation
     {
         private Point _first;
-        private double _weight;
-        private double _height;
-        public  double GetPerimeter { get { return _height * 2 + _weight * 2; } }
-        public  double GetArea { get { return _height * _weight; } }
+        private double _length;
+        private double _heigth;
+        public  double GetPerimeter { get { return _heigth * 2 + _length * 2; } }
+        public  double GetArea { get { return _heigth * _length; } }
 
-        public Rectangle(Point first, double height, double weight)
+        public double Heigth { get=> _heigth;}
+        public double Length { get => _length; }
+        public Rectangle(Point first, double heigth, double length)
         {
             _first = first;
-            _weight = weight;
-            _height = height;        
+            _length = length;
+            _heigth = heigth;        
         }
-        public override string GetName() => "Прямоугольник";
+        public override string ToString() => $" прямоугольник со сторонами {Heigth}, {Length} ";
     }
 }

@@ -11,11 +11,12 @@ namespace Task_2_1_2
         private Point _first;
         private double _side;
 
+        public double Side { get=> _side;}
         public Square(Point first, double side): base(first,side,side)
         {
             _first = first;
             _side = side;
         }
-        public override string GetName() => "Квадрат";
+        public override string ToString() => $"квадрат со сторонами {Side}";
     }
 }

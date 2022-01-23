@@ -18,7 +18,7 @@ namespace Task_2_1_2
             _first = first;
             _second = second;
         }
-        public override string GetName() => "Линия";
+        public override string ToString() => $"линия: длиной {GetLineLength} ";
 
     }
 }
