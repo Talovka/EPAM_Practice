@@ -13,6 +13,6 @@ namespace Task_2_1_2
         public Circle (Point center, double radius): base(center, radius) { _radius = radius; }
 
         public virtual double GetArea { get { return Math.PI*_radius*_radius; } }
-        public override string ToString() => $"круг: координаты центра - X:{X}, Y:{Y};  Радиус: {Radius}";
+        public override string ToString() => $"круг: координаты центра - X:{X}, Y:{Y};  Радиус: {Radius}; Длина круга: {GetLineLength}; Площадь круга: {GetArea}";
     }
 }

@@ -22,6 +22,6 @@ namespace Task_2_1_2
             _center = center;
             _radius = radius;
             }
-        public override string ToString() => $"окружность: координаты центра - X:{X}, Y:{Y};  Радиус: {Radius}";
+        public override string ToString() => $"окружность: координаты центра - X:{X}, Y:{Y};  Радиус: {Radius}; Длина окружности: {GetLineLength}";
     }
 }

@@ -32,6 +32,6 @@ namespace Task_2_1_2
             _line3 = new Line(_third, _first);
         }
         private double P=>(GetLine1Length+GetLine2Length+GetLine3Length)/2;
-        public override string ToString() => $"треугольник со сторонами: {GetLine1Length}, {GetLine2Length}, {GetLine3Length}";
+        public override string ToString() => $"треугольник со сторонами: {GetLine1Length}, {GetLine2Length}, {GetLine3Length}; Периметр треугольника:{GetPerimeter}; Площадь треугольника:{GetArea}";
     }
 }

@@ -10,18 +10,18 @@ namespace Task_2_1_2
     {
         private User user = new User("Pavel");
 
-        public void GetStarted()
+        public void PaintStart()
         {
-            string input;
+            string menu;
 
             Console.WriteLine("Выберите действие:");
             Console.WriteLine("1. Добавить фигуру");
             Console.WriteLine("2. Вывести фигуры");
             Console.WriteLine("3. Удалить все фигуры");
             Console.WriteLine("4. Выход");
-            input = Console.ReadLine();
+            menu = Console.ReadLine();
 
-            switch (input)
+            switch (menu)
             {
                 case "1":
 
@@ -34,7 +34,7 @@ namespace Task_2_1_2
                     Console.WriteLine("6. Создать прямоугольник");
                     Console.WriteLine("7. Создать квадрат");
 
-                    string variant = Console.ReadLine();
+                    string figure = Console.ReadLine();
                     Point pointfirst;
                     Point pointsecond;
                     Point pointthird;
@@ -43,7 +43,7 @@ namespace Task_2_1_2
                     double heigth;
                     double length;
 
-                    switch (variant)
+                    switch (figure)
                     {
                         case "1":
                             pointfirst = StartPoint("Первая точка");
@@ -53,8 +53,7 @@ namespace Task_2_1_2
                                 Line line = new Line(pointfirst, pointsecond);
                                 user.AddShape(line);
                                 Console.WriteLine($"Создана {line}");
-                                Console.WriteLine();
-                                GetStarted();
+                                PaintStart();
                             }
                             catch
                             {
@@ -65,15 +64,13 @@ namespace Task_2_1_2
                         case "2":
                             pointfirst = StartPoint("Центр окружности");
                             Console.Write("Введите радиус: ");
-                            double.TryParse(Console.ReadLine(), out radius);
+                            radius= double.Parse(Console.ReadLine());
                             try
                             {
                                 Round round = new Round(pointfirst, radius);
                                 user.AddShape(round);
                                 Console.WriteLine($"Создана {round}");
-                                Console.WriteLine($"Длина окружности: {round.GetLineLength}");
-                                Console.WriteLine();
-                                GetStarted();
+                                PaintStart();
                             }
                             catch
                             {
@@ -83,15 +80,13 @@ namespace Task_2_1_2
                         case "3":
                             pointfirst = StartPoint("Центр круга");
                             Console.Write("Введите радиус: ");
-                            double.TryParse(Console.ReadLine(), out radius);
+                            radius= double.Parse(Console.ReadLine());
                             try
                             {
                                 Circle circle = new Circle(pointfirst, radius);
                                 user.AddShape(circle);
                                 Console.WriteLine($"Создан {circle}");
-                                Console.WriteLine($"Длина круга: {circle.GetLineLength} Площадь круга: {circle.GetArea}");
-                                Console.WriteLine();
-                                GetStarted();
+                                PaintStart();
                             }
                             catch
                             {
@@ -102,17 +97,15 @@ namespace Task_2_1_2
                         case "4":
                             pointfirst = StartPoint("Центр кольца");
                             Console.Write("Введите внутренний радиус: ");
-                            double.TryParse(Console.ReadLine(), out innerradius); ;
+                            innerradius = double.Parse(Console.ReadLine()); ;
                             Console.Write("Введите внешний радиус: ");
-                            double.TryParse(Console.ReadLine(), out radius); ;
+                            radius = double.Parse(Console.ReadLine()); ;
                             try
                             {
                                 Ring ring = new Ring(pointfirst, innerradius, radius);
                                 user.AddShape(ring);
                                 Console.WriteLine($"Создано {ring}");
-                                Console.WriteLine($"Длина кольца: {ring.GetLineLength} Площадь кольца: {ring.GetArea}");
-                                Console.WriteLine();
-                                GetStarted();
+                                PaintStart();
                             }
                             catch
                             {
@@ -124,15 +117,12 @@ namespace Task_2_1_2
                             pointfirst = StartPoint("Первая сторона");
                             pointsecond = StartPoint("Вторая сторона");
                             pointthird = StartPoint("Третья сторона");
-
                             try
                             {
                                 Triangle triangle = new Triangle(pointfirst, pointsecond, pointthird);
                                 user.AddShape(triangle);
                                 Console.WriteLine($"Создан {triangle}");
-                                Console.WriteLine($"Периметр треугольника: {triangle.GetPerimeter} Площадь треугольника: {triangle.GetArea}");
-                                Console.WriteLine();
-                                GetStarted();
+                                PaintStart();
                             }
                             catch
                             {
@@ -151,9 +141,7 @@ namespace Task_2_1_2
                                 Rectangle rectangle = new Rectangle(pointfirst, heigth, length);
                                 user.AddShape(rectangle);
                                 Console.WriteLine($"Создан {rectangle}");
-                                Console.WriteLine($"Периметр прямоугольника: {rectangle.GetPerimeter} Площадь прямоугольника: {rectangle.GetArea}");
-                                Console.WriteLine();
-                                GetStarted();
+                                PaintStart();
                             }
                             catch
                             {
@@ -170,9 +158,7 @@ namespace Task_2_1_2
                                 Square square = new Square(pointfirst, length);
                                 user.AddShape(square);
                                 Console.WriteLine($"Создан {square}");
-                                Console.WriteLine($"Периметр квадрата: {square.GetPerimeter} Площадь квадрата: {square.GetArea}");
-                                Console.WriteLine();
-                                GetStarted();
+                                PaintStart();
                             }
                             catch
                             {
@@ -192,15 +178,13 @@ namespace Task_2_1_2
                         Console.WriteLine("№ - {0} {1}", i, item);
                         i++;
                     }
-                    Console.WriteLine();
-                    GetStarted();
+                    PaintStart();
                     break;
 
                 case "3":
                     user.ListofShape.Clear();
                     Console.WriteLine("Все фигуры удалены");
-                    Console.WriteLine();
-                    GetStarted();
+                    PaintStart();
                     break;
 
                 case "4":
@@ -214,11 +198,10 @@ namespace Task_2_1_2
         {
             double x;
             double y;
-            Console.Write($"{Environment.NewLine}{name} :" +
-                $"{Environment.NewLine}X: ");
-            double.TryParse(Console.ReadLine(), out x);
+            Console.Write($"{name}:\n" + $"X: ");
+            x = double.Parse(Console.ReadLine());
             Console.Write("Y: ");
-            double.TryParse(Console.ReadLine(), out y);
+            y = double.Parse(Console.ReadLine());
             return new Point(x, y);
         }
     }

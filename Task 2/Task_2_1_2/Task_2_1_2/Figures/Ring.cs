@@ -19,6 +19,6 @@ namespace Task_2_1_2
         public double InnerRadius { get => _innerradius; }
         public override double GetLineLength { get { return 2 * Math.PI * _innerradius + 2 * Math.PI * _radius; }}
         public override double GetArea { get { return Math.PI * (_radius * _radius - _innerradius * _innerradius); } }
-        public override string ToString() => $"кольцо: координаты центра:  X:{X}, Y:{Y}; Внешний радиус: {Radius}; Внутренний радиус: {InnerRadius}";
+        public override string ToString() => $"кольцо: координаты центра:  X:{X}, Y:{Y}; Внешний радиус: {Radius}; Внутренний радиус: {InnerRadius}; Длина кольца: {GetLineLength}; Площадь кольца: {GetArea}";
     }
 }

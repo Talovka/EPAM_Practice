@@ -17,6 +17,6 @@ namespace Task_2_1_2
             _first = first;
             _side = side;
         }
-        public override string ToString() => $"квадрат со сторонами {Side}";
+        public override string ToString() => $"квадрат со сторонами {Side}; Периметр квадрата: {GetPerimeter}; Площадь квадрата: {GetArea}";
     }
 }

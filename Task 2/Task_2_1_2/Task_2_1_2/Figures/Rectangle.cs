@@ -22,6 +22,6 @@ namespace Task_2_1_2
             _length = length;
             _heigth = heigth;        
         }
-        public override string ToString() => $" прямоугольник со сторонами {Heigth}, {Length} ";
+        public override string ToString() => $" прямоугольник со сторонами {Heigth}, {Length}; Периметр прямоугольника: {GetPerimeter}; Площадь прямоугольника: {GetArea} ";
     }
 }
