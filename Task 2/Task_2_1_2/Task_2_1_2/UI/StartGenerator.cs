@@ -194,11 +194,12 @@ namespace Task_2_1_2
                     throw new NotImplementedException();
             }
         }
-        public static Point StartPoint(string name)
+        public static Point StartPoint(string point)
         {
             double x;
             double y;
-            Console.Write($"{name}:\n" + $"X: ");
+            Console.WriteLine($"{point}:");
+            Console.Write("X: ");
             x = double.Parse(Console.ReadLine());
             Console.Write("Y: ");
             y = double.Parse(Console.ReadLine());
