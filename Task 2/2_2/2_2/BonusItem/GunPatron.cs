@@ -17,7 +17,7 @@ namespace _2_2
         public override int BonusEffect(Raynor pl) 
         {
 
-            return pl.GunCapacity= pl.GunCapacity+1;
+            return pl.GunCapacity = pl.GunCapacity+1;
         }
         public override string ToString() => "#";
         

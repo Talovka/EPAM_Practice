@@ -28,7 +28,7 @@ namespace _2_2
             arr = new GameObject[Width, Heigth];
         }
 
-    
+        
 
     }
 }
